@@ -18,4 +18,8 @@ export class ProductService {
   async create(data: iProduct): Promise<Product> {
     return this.productRepository.save(data);
   }
+
+  async get(id: number): Promise<Product> {
+    return this.productRepository.findOneBy({ id });
+  }
 }
