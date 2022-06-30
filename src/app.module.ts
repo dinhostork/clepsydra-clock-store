@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [],
       synchronize: process.env.ENVIROMENT == 'env',
     }),
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
