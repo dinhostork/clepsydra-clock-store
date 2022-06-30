@@ -22,4 +22,8 @@ export class ProductService {
   async get(id: number): Promise<Product> {
     return this.productRepository.findOneBy({ id });
   }
+
+  async update(id: number, data: iProduct): Promise<any> {
+    return this.productRepository.update(id, data);
+  }
 }
